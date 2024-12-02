@@ -1,6 +1,6 @@
 import 'package:api/gemini/gemini_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart'; // For CubeTransition indicator
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -13,13 +13,11 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // Navigate to the main screen after a delay (e.g., 3 seconds)
-    Future.delayed(const Duration(seconds: 10), () {
-      Navigator.pushReplacement(
+
+    Future.delayed(const Duration(seconds: 5), () {
+      Navigator.push(
         context,
-        MaterialPageRoute(
-            builder: (context) =>
-                const GeminiScreen()), // Replace with your main screen
+        MaterialPageRoute(builder: (context) => const GeminiScreen()),
       );
     });
   }
@@ -27,20 +25,19 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey, // Background color for splash screen
+      backgroundColor: Colors.blueGrey,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // CubeTransition loading indicator
             const SpinKitCubeGrid(
               color: Colors.white,
-              size: 50.0, // You can adjust the size as needed
+              size: 50.0,
             ),
-            const SizedBox(height: 20), // Spacing between indicator and text
+            const SizedBox(height: 20),
             const Text(
-              'Welcome to Gemini AI\nAsk me a question',
+              'Welcome to Gemini AI\nAsk me a question...',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 20.0,

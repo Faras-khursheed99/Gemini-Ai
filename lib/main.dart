@@ -1,7 +1,3 @@
-import 'package:api/API/Get_Albam_API/album_screen.dart';
-import 'package:api/API/Get_Photo_Api/photo_screen.dart';
-import 'package:api/API/Get_comment_Api/Get_screen.dart';
-import 'package:api/API/Get_post_Api/post_Screen.dart';
 import 'package:api/gemini/gemini_screen.dart';
 import 'package:api/gemini/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -18,11 +14,6 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
-      // GeminiScreen(),
-      //PhotoScreenApi(),
-      //AlbumScreen(),
-      // Get_Comment()
-      // Api_PostScreen()
     );
   }
 }
