@@ -9,24 +9,24 @@ class geminiapi {
     if (json['candidates'] != null) {
       candidates = <Candidates>[];
       json['candidates'].forEach((v) {
-        candidates!.add(new Candidates.fromJson(v));
+        candidates!.add(Candidates.fromJson(v));
       });
     }
     usageMetadata = json['usageMetadata'] != null
-        ? new UsageMetadata.fromJson(json['usageMetadata'])
+        ? UsageMetadata.fromJson(json['usageMetadata'])
         : null;
     modelVersion = json['modelVersion'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.candidates != null) {
-      data['candidates'] = this.candidates!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (candidates != null) {
+      data['candidates'] = candidates!.map((v) => v.toJson()).toList();
     }
-    if (this.usageMetadata != null) {
-      data['usageMetadata'] = this.usageMetadata!.toJson();
+    if (usageMetadata != null) {
+      data['usageMetadata'] = usageMetadata!.toJson();
     }
-    data['modelVersion'] = this.modelVersion;
+    data['modelVersion'] = modelVersion;
     return data;
   }
 }
@@ -40,18 +40,18 @@ class Candidates {
 
   Candidates.fromJson(Map<String, dynamic> json) {
     content =
-        json['content'] != null ? new Content.fromJson(json['content']) : null;
+        json['content'] != null ? Content.fromJson(json['content']) : null;
     finishReason = json['finishReason'];
     avgLogprobs = json['avgLogprobs'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.content != null) {
-      data['content'] = this.content!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (content != null) {
+      data['content'] = content!.toJson();
     }
-    data['finishReason'] = this.finishReason;
-    data['avgLogprobs'] = this.avgLogprobs;
+    data['finishReason'] = finishReason;
+    data['avgLogprobs'] = avgLogprobs;
     return data;
   }
 }
@@ -66,18 +66,18 @@ class Content {
     if (json['parts'] != null) {
       parts = <Parts>[];
       json['parts'].forEach((v) {
-        parts!.add(new Parts.fromJson(v));
+        parts!.add(Parts.fromJson(v));
       });
     }
     role = json['role'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.parts != null) {
-      data['parts'] = this.parts!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (parts != null) {
+      data['parts'] = parts!.map((v) => v.toJson()).toList();
     }
-    data['role'] = this.role;
+    data['role'] = role;
     return data;
   }
 }
@@ -92,8 +92,8 @@ class Parts {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['text'] = this.text;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['text'] = text;
     return data;
   }
 }
@@ -113,10 +113,10 @@ class UsageMetadata {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['promptTokenCount'] = this.promptTokenCount;
-    data['candidatesTokenCount'] = this.candidatesTokenCount;
-    data['totalTokenCount'] = this.totalTokenCount;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['promptTokenCount'] = promptTokenCount;
+    data['candidatesTokenCount'] = candidatesTokenCount;
+    data['totalTokenCount'] = totalTokenCount;
     return data;
   }
 }

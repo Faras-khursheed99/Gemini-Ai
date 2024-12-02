@@ -3,6 +3,7 @@ import 'package:api/API/Get_Photo_Api/photo_screen.dart';
 import 'package:api/API/Get_comment_Api/Get_screen.dart';
 import 'package:api/API/Get_post_Api/post_Screen.dart';
 import 'package:api/gemini/gemini_screen.dart';
+import 'package:api/gemini/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,9 +15,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: GeminiScreen(),
+      home: SplashScreen(),
+      // GeminiScreen(),
       //PhotoScreenApi(),
       //AlbumScreen(),
       // Get_Comment()

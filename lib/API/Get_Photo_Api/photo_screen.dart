@@ -17,7 +17,7 @@ class _PhotoScreenApiState extends State<PhotoScreenApi> {
       child: Consumer<PhotoProvider>(
         builder: (context, model, child) => Scaffold(
           appBar: AppBar(
-            title: Text('Photo Api'),
+            title: const Text('Photo Api'),
           ),
           body: Column(
             children: [

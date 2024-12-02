@@ -18,7 +18,7 @@ class _AlbumScreenState extends State<AlbumScreen> {
       child: Consumer<AlbumProvider>(
         builder: (context, model, child) => Scaffold(
           appBar: AppBar(
-            title: Text('Album Api'),
+            title: const Text('Album Api'),
           ),
           body: Column(
             children: [

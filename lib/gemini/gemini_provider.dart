@@ -48,7 +48,7 @@ class GeminiProvider extends ChangeNotifier {
         print('Gemini response:Rsponse Fetched');
       } else {
         message.add("Error: Unable to fetch response. Try again.");
-        print('Error response: fetched');
+        print('Error response: no response');
       }
     } catch (e) {
       message.add("Error: An unexpected error occurred.");

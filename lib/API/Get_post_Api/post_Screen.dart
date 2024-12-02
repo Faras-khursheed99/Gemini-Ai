@@ -17,7 +17,7 @@ class _Api_PostScreenState extends State<Api_PostScreen> {
         child: Consumer<PostProvider>(
           builder: (context, model, child) => Scaffold(
             appBar: AppBar(
-              title: Text('api post'),
+              title: const Text('api post'),
             ),
             body: Column(
               children: [
